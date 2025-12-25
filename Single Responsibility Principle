@@ -1,0 +1,37 @@
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// Single responsibility Principle
+
+
+
+// class Authentication{
+//     public:
+//     void login(){
+//         cout<<"you have logged in "<<endl;
+//     }
+//     void logout(){
+//         cout<<"you have log out"<<endl;
+//     }
+// };
+// class userInfo{
+//     public:
+//     void printuserInfo(string username){
+//         cout<<"he name of the user is:"<<username<<endl;
+//     }
+    
+// };
+// class user : public Authentication, public userInfo {
+// };
+
+
+// Open for extension and close for modification
+
+ 
+// int main(){
+//     // user user;
+//     // user.login();
+//     // user.printuserInfo("Abhishek");
+//     // user.logout();
+//     return 0;
+// }
