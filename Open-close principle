@@ -1,0 +1,90 @@
+-----------------------------------------------------------------------------------------------------Open/Closed Principle (OCP)-------------------------------------------------------------------------------------------------------------------------
+The Open/Closed Principle (OCP) emphasizes designing code that is open for extension but closed for modification. In other words,
+ when new features need to be added, it is better to extend the existing code rather than directly modifying it.
+
+The key advantage of applying OCP lies in its ability to make the code more flexible and extensible. By using mechanisms such as inheritance,
+ polymorphism, and inversion of control, we can add new features without impacting the existing code. It also facilitates unit testing,
+ as existing features are not altered when introducing new ones.
+
+For example, in a payment processing application, we can have a generic abstract class for payment methods, such as “PaymentMethod.”
+Each specific payment method (e.g., credit card, PayPal) can then be implemented by extending this abstract class while retaining the basic functionalities common to all payment methods.
+
+By following the OCP principle, the code remains stable and avoids regressions even when extended with new features.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+// Abstract Base Class (Closed for modification)
+class BankAccount {
+protected:
+    double balance;
+
+public:
+    BankAccount(double initialBalance) : balance(initialBalance) {}
+
+    virtual void credit(double amount) {
+        balance += amount;
+        cout << "Credited: " << amount << endl;
+    }
+
+    virtual void withdraw(double amount) = 0;   // Different rule per account
+
+    virtual void showBalance() const {
+        cout << "Balance: " << balance << endl;
+    }
+
+    virtual ~BankAccount() {}
+};
+
+// Savings Account (Extension)
+class SavingsAccount : public BankAccount {
+public:
+    SavingsAccount(double initialBalance)
+        : BankAccount(initialBalance) {}
+
+    void withdraw(double amount) override {
+        if (balance - amount >= 500) {   // minimum balance rule
+            balance -= amount;
+            cout << "Savings Withdrawal: " << amount << endl;
+        } else {
+            cout << "Savings Account: Minimum balance required!" << endl;
+        }
+    }
+};
+
+// Current Account (Extension)
+class CurrentAccount : public BankAccount {
+public:
+    CurrentAccount(double initialBalance)
+        : BankAccount(initialBalance) {}
+
+    void withdraw(double amount) override {
+        if (balance >= amount) {
+            balance -= amount;
+            cout << "Current Withdrawal: " << amount << endl;
+        } else {
+            cout << "Current Account: Insufficient balance!" << endl;
+        }
+    }
+};
+
+// Client Code (Never changes)
+void processAccount(BankAccount* account) {
+    account->credit(1000);
+    account->withdraw(500);
+    account->showBalance();
+}
+
+int main() {
+    BankAccount* savings = new SavingsAccount(3000);
+    BankAccount* current = new CurrentAccount(2000);
+
+    processAccount(savings);
+    cout << "-------------------" << endl;
+    processAccount(current);
+
+    delete savings;
+    delete current;
+
+    return 0;
+}
