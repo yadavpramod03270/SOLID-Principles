@@ -37,10 +37,11 @@ int main() {
     return 0;
 }
 
-/*
+
 Same design as yours — just clear names + clean structure.
 
-2️⃣ FINAL CONCLUSION (very important)
+FINAL CONCLUSION (very important)
+--------------------------------------------
 Dependency Inversion Principle is not just runtime polymorphism.
 It is about WHO depends on WHOM.
 
@@ -58,16 +59,16 @@ Adding SmsSender needs NO change in NotificationService
 
 Only main() changes
 
-✅ DIP is followed
+ DIP is followed
+--------------------------------------------
 
-3️⃣ NOTES FOR YOUR BOOK (save this 📘)
+3️ NOTES FOR YOUR BOOK (save this 📘)
+--------------------------------------------
 🔹 High-level module
 Contains business logic
 
 Describes what to do
-
 Should NOT depend on concrete classes
-
 Example: NotificationService
 
 🔹 Low-level module
@@ -85,22 +86,20 @@ Acts as a contract
 Both high-level and low-level depend on it
 
 🔹 Dependency Inversion Principle (DIP)
+--------------------------------------------
+
 High-level modules should not depend on low-level modules
-
 Both should depend on abstractions
-
 Details depend on abstractions, not the other way around
 
 🔹 Runtime Polymorphism relation
+--------------------------------------------
 DIP uses runtime polymorphism
-
 Base pointer → derived object
-
 Virtual function → late binding
-
 But polymorphism alone ≠ DIP
 
 🔹 Key memory line ⭐
 Main creates the object.
 The service uses the abstraction.
-The behavior changes automatically.*/
+The behavior changes automatically.
