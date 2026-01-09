@@ -1,4 +1,4 @@
-  ==================================================================SOLID==========================================================================
+===================SOLID=================
 The SOLID principles are key concepts in software development. They promote the design of robust and scalable code. In this chapter,
  we will examine in detail the five SOLID principles and their respective advantages.
 
@@ -13,9 +13,9 @@ Additionally, troubleshooting and issue resolution are simplified as each class 
  as specialized classes can be used in different parts of the system.
 
 Let’s take the example of a library management application. By applying SRP, we can have a separate class for book management,
- another for users, and another for transactions. Each class will have its own responsibility, making the code clearer and more maintainable.
+another for users, and another for transactions. Each class will have its own responsibility, making the code clearer and more maintainable.
 
- --------------------------------------------------------------Open/Closed Principle (OCP)----------------------------------------------------------- 
+ -------------------------------------------------Open/Closed Principle (OCP)--------------------------------------- 
 The Open/Closed Principle (OCP) emphasizes designing code that is open for extension but closed for modification. In other words,
  when new features need to be added, it is better to extend the existing code rather than directly modifying it.
 
