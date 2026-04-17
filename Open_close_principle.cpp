@@ -1,4 +1,4 @@
------------------------------------------------------------------------------------------------------Open/Closed Principle (OCP)-------------------------------------------------------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------------------------------Open/Closed Principle (OCP)-------------------------------------------------------------------------------------------------------------------------
 The Open/Closed Principle (OCP) emphasizes designing code that is open for extension but closed for modification. In other words,
  when new features need to be added, it is better to extend the existing code rather than directly modifying it.
 
@@ -10,7 +10,7 @@ For example, in a payment processing application, we can have a generic abstract
 Each specific payment method (e.g., credit card, PayPal) can then be implemented by extending this abstract class while retaining the basic functionalities common to all payment methods.
 
 By following the OCP principle, the code remains stable and avoids regressions even when extended with new features.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 #include <iostream>
 using namespace std;
 
