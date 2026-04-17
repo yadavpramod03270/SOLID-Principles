@@ -38,7 +38,7 @@ int main() {
 }
 
 
-Same design as yours — just clear names + clean structure.
+/*
 
 FINAL CONCLUSION (very important)
 --------------------------------------------
@@ -64,42 +64,42 @@ Only main() changes
 
 3️ NOTES 
 --------------------------------------------
-🔹 High-level module
+1. High-level module
 Contains business logic
 
 Describes what to do
 Should NOT depend on concrete classes
 Example: NotificationService
 
-🔹 Low-level module
+2)Low-level module
 Handles how things are done
 
 Implements details (Email, SMS, DB, File, etc.)
 
 Example: EmailSender
 
-🔹 Abstraction
+3) Abstraction
 Interface / abstract class
 
 Acts as a contract
 
 Both high-level and low-level depend on it
 
-🔹 Dependency Inversion Principle (DIP)
+ Dependency Inversion Principle (DIP)
 --------------------------------------------
 
 High-level modules should not depend on low-level modules
 Both should depend on abstractions
 Details depend on abstractions, not the other way around
 
-🔹 Runtime Polymorphism relation
+Runtime Polymorphism relation
 --------------------------------------------
 DIP uses runtime polymorphism
 Base pointer → derived object
 Virtual function → late binding
 But polymorphism alone ≠ DIP
 
-🔹 Key memory line ⭐
+Key memory line 
 Main creates the object.
 The service uses the abstraction.
-The behavior changes automatically.
+The behavior changes automatically.*/
